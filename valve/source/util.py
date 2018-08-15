@@ -21,6 +21,8 @@ class Platform(object):
     +=====+==========+
     | 76  | Linux    |
     +-----+----------+
+    | 87  | Windows  |
+    +-----+----------+
     | 108 | Linux    |
     +-----+----------+
     | 109 | Mac OS X |
@@ -62,7 +64,7 @@ class Platform(object):
                 if value is None:
                     raise ValueError("Couldn't convert string {!r} to valid "
                                      "platform identifier".format(value))
-        if value not in {76, 108, 109, 111, 119}:
+        if value not in {76, 87, 108, 109, 111, 119}:
             raise ValueError("Invalid platform identifier {!r}".format(value))
         self.value = value
 
@@ -73,6 +75,7 @@ class Platform(object):
     def __unicode__(self):
         return {
             76: "Linux",
+            87: "Windows",
             108: "Linux",
             109: "Mac OS X",
             111: "Mac OS X",
